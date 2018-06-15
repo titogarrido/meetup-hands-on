@@ -17,4 +17,4 @@ Esse documento descreve o Meetup com hands-on. Os arquivos necessários para a e
 
 Para nosso exercício iremos utilizar uma instancia SuSE 12 SP3.
 
-![](/Users/titogarridoogando/Documents/IBM/LabService/Blockchain/Workshop/Meetup - Workshop/docs/meetup-hands-on/img/flavor.png)
+![](https://raw.githubusercontent.com/titogarrido/meetup-hands-on/master/img/flavor.png)
