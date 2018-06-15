@@ -6,10 +6,10 @@ Esse documento descreve o Meetup com hands-on. Os arquivos necessários para a e
 
 ## Pre-requisitos
 
-- [ ] Criar sua conta na Linux Community Cloud (https://developer.ibm.com/linuxone/request-a-trial/)
-- [ ] Noção Básica de Linux
-- [ ] Noção Básica de Programação
-- [ ] Cliente SSH
+- [x] Criar sua conta na Linux Community Cloud (https://developer.ibm.com/linuxone/request-a-trial/)
+- [x] Noção Básica de Linux
+- [x] Noção Básica de Programação
+- [x] Cliente SSH
 
 
 
@@ -18,3 +18,11 @@ Esse documento descreve o Meetup com hands-on. Os arquivos necessários para a e
 Para nosso exercício iremos utilizar uma instancia SuSE 12 SP3.
 
 ![](https://raw.githubusercontent.com/titogarrido/meetup-hands-on/master/img/flavor.png)
+
+Depois de criado o seu servidor terá um IP válido. O usuário para acesso é *linux1* e utilizará a chave que você especificou quando criou a instância.
+
+![](https://raw.githubusercontent.com/titogarrido/meetup-hands-on/master/img/server.png)
+
+
+
+Utilize o cliente SSH de sua preferência com sua chave e acesse o servidor.
