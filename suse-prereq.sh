@@ -26,9 +26,9 @@ sudo usermod -aG docker $(whoami)
 
 # Docker compose
 
-easy_install pip
+sudo easy_install pip
 
-pip install docker-compose==1.13
+sudo pip install docker-compose==1.13
 
 # Print installation details for user
 echo ''
