@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo zypper install --type pattern Basis-Devel
-sudo zypper in libopenssl-devel
+sudo zypper install -y --type pattern Basis-Devel
+sudo zypper in -y libopenssl-devel
 
 # Execute nvm installation script
 echo "# Executing nvm installation script"
