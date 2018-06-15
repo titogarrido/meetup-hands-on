@@ -39,7 +39,7 @@ Nosso workshop consistirá nos seguintes tutoriais oficiais:
    3. Criar um aplicação simples de teste
    4. Testa-la e exporta-la
 2. Instalando seu ambiente de desenvolvimento
-   1. Utilizando seu Linux no mainframe, vamos instalar o Hyperledger Composer e o Fabric para desenvolvimento.
+   1. Utilizando seu Linux no LinuxOne Community Cloud, vamos instalar o Hyperledger Composer e o Fabric para desenvolvimento.
    2. Vamos importar nossa aplicação para a rede de desenvolvimento.
    3. Demonstrar o acesso ao Blockchain via REST API.
 
@@ -73,4 +73,12 @@ Ao final você terá o Docker, Python, Docker-Compose, NodeJS e o NPM instalados
 Para a instalação do ambiente de desenvolvimento vamos utilizar o seguinte tutorial oficial:
 
 [Installing the development environment](https://hyperledger.github.io/composer/latest/installing/development-tools.html)
+
+## Abrindo as portas do firewall
+
+```bash
+sudo iptables -i eth0 -I INPUT -p tcp --dport 3000 -j ACCEPT
+sudo iptables -i eth0 -I INPUT -p tcp --dport 8080 -j ACCEPT
+sudo iptables-save > ~/iptables.save
+```
 
