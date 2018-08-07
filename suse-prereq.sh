@@ -48,6 +48,11 @@ npm install -g generator-hyperledger-composer@0.19
 npm install -g yo
 npm install -g composer-playground@0.19
 
+# Add firewall rules
+sudo iptables -i eth0 -I INPUT -p tcp --dport 3000 -j ACCEPT
+sudo iptables -i eth0 -I INPUT -p tcp --dport 4200 -j ACCEPT
+sudo iptables -i eth0 -I INPUT -p tcp --dport 8080 -j ACCEPT
+sudo iptables-save > ~/iptables.save
 
 # Fetch some utils
 cd ~/
