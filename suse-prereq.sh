@@ -61,10 +61,6 @@ sudo iptables-save > ~/iptables.save
 mkdir ~/fabric-tools && cd ~/fabric-tools
 curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz
 tar xzf fabric-dev-servers.tar.gz
-export FABRIC_VERSION=hlfv11
-./downloadFabric.sh
-./startFabric.sh
-./createPeerAdminCard.sh
 
 # Print installation details for user
 echo ''
