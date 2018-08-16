@@ -3,6 +3,8 @@
 sudo zypper install -y --type pattern Basis-Devel
 sudo zypper install -y libopenssl-devel
 
+HL_FABRIC_VERSION="hlfv11"
+
 # Execute nvm installation script
 echo "# Executing nvm installation script"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
@@ -40,6 +42,7 @@ cp -ipv .bashrc .bashrc_orig
 echo export GOPATH=/home/$USER/git >> .bashrc
 echo export GOROOT=/opt/go >> .bashrc
 echo export PATH=/opt/go/bin:/home/$USER/bin:\$PATH >> .bashrc
+echo export FABRIC_VERSION=hlfv11 >> .bashrc
 
 # Installing composer
 npm install -g composer-cli@0.19
@@ -55,10 +58,13 @@ sudo iptables -i eth0 -I INPUT -p tcp --dport 8080 -j ACCEPT
 sudo iptables-save > ~/iptables.save
 
 # Fetch some utils
-cd ~/
-git clone https://github.com/hyperledger/composer-sample-applications.git
-git clone https://github.com/hyperledger/composer-tools.git
-
+mkdir ~/fabric-tools && cd ~/fabric-tools
+curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz
+tar xzf fabric-dev-servers.tar.gz
+export FABRIC_VERSION=hlfv11
+./downloadFabric.sh
+./startFabric.sh
+./createPeerAdminCard.sh
 
 # Print installation details for user
 echo ''
