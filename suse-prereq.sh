@@ -27,7 +27,7 @@ if [[ ! -d "/data" ]]; then
 fi
 # END Sanity checks
 
-printf "
+printf ""
 
 sudo zypper install -y --type pattern Basis-Devel
 sudo zypper install -y libopenssl-devel
