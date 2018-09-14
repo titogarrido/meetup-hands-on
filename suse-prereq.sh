@@ -1,5 +1,34 @@
 #!/bin/bash
 
+# Sanity checks
+relog=false
+# Check for docker group
+if ! $( id -Gn | grep -wq docker ); then
+  sudo usermod -aG docker linux1
+  echo "ID linux1 was not a member of the docker group. This has been corrected."
+  relog=true
+fi
+# Check PATH for /data/npm/bin
+if ! $( echo $PATH | grep -q /data/npm/bin ); then
+  echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile
+  echo "PATH was missing '/data/npm/bin'. This has been corrected."
+  relog=true
+fi
+# Relog needed?
+if [[ "$relog" = true ]]; then
+  echo "Some changes have been made that require you to log out and log back in."
+  echo "Please do this now and then re-run this script."
+  exit 1
+fi
+# Ensure /data exists
+if [[ ! -d "/data" ]]; then
+  echo "/data disk is missing. It could take up to 10 minutes to format and mount the /data disk. Issue 'df -h' to verify the /data disk is available before running this script again. When /data is available, please run this script again."
+  exit 2
+fi
+# END Sanity checks
+
+printf "
+
 sudo zypper install -y --type pattern Basis-Devel
 sudo zypper install -y libopenssl-devel
 
